@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="328dp"
+    android:layout_height="236dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/round_bg_course_card" >
+
+    <Button
+        android:id="@+id/btnFavorite"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_margin="8dp"
+        android:background="@drawable/bg_btn_bookmark"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ratingInfo"
+        android:layout_width="46dp"
+        android:layout_height="22dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_gravity="center_vertical"
+        android:paddingVertical="4dp"
+        android:paddingHorizontal="8dp"
+        android:background="@drawable/round_bg_glass_12radius"
+        app:layout_constraintBottom_toBottomOf="@id/courseCover"
+        app:layout_constraintStart_toStartOf="parent" >
+
+        <ImageView
+            android:id="@+id/starIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="1dp"
+            android:src="@drawable/ic_star_fill"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/rating" />
+        
+        <TextView
+            android:id="@+id/rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            tools:text="4.9"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:lineHeight="14dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/starIcon"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/courseDate"
+        android:layout_width="87dp"
+        android:layout_height="22dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="4dp"
+        android:gravity="center"
+        android:background="@drawable/round_bg_glass_12radius"
+        tools:text="22 Мая 2024"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:lineHeight="14dp"
+        app:layout_constraintStart_toEndOf="@+id/ratingInfo"
+        app:layout_constraintBottom_toBottomOf="@+id/courseCover" />
+
+    <!--  clipToOutline надо делать программно в адаптере ресайклера  -->
+    <ImageView
+        android:id="@+id/courseCover"
+        android:layout_width="match_parent"
+        android:layout_height="114dp"
+        android:elevation="-1dp"
+        android:src="@drawable/pedik"
+        android:clipToOutline="true"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="300dp"
+        android:layout_height="90dp"
+        android:layout_marginVertical="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintTop_toBottomOf="@id/courseCover"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" >
+
+        <TextView
+            android:id="@+id/courseTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Java-разработчик с нуля"
+            android:textSize="16sp"
+            android:textAppearance="@style/Custom.App.BoldTextAppearance"
+            android:lineHeight="18dp"
+            android:letterSpacing="0.009375"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/courseDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            tools:text="Освойте backend-разработку и программирование на Java, фреймворки Spring и Maven, работу с базами данных и API. Создайте свой собственный проект, собрав портфолио и став востребованным специалистом для любой IT компании."
+            android:textSize="12sp"
+            android:textColor="@color/white_opacity_70"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:scrollHorizontally="false"
+            android:lineHeight="16dp"
+            android:letterSpacing="0.025"
+            android:textAppearance="@style/Custom.App.NormalTextAppearance"
+            app:layout_constraintTop_toBottomOf="@+id/courseTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+        
+        <TextView
+            android:id="@+id/coursePrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            tools:text="999 ₽"
+            android:textSize="16sp"
+            android:lineHeight="18dp"
+            android:letterSpacing="0.009375"
+            android:textAppearance="@style/Custom.App.BoldTextAppearance"
+            app:layout_constraintTop_toBottomOf="@+id/courseDescription"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/btnDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:text="@string/details"
+            android:textColor="@color/green"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:lineHeight="15dp"
+            android:letterSpacing="0.033"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/arrowRight" />
+
+        <ImageView
+            android:id="@+id/arrowRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/none"
+            android:src="@drawable/ic_arrow_right_short_fill"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
