@@ -22,6 +22,8 @@ class HomeViewModel @Inject constructor(
 
     private var job: Job? = null
 
+    private var page: Int = 1
+
     private val coroutineExceptionHandler = CoroutineExceptionHandler { _, throwable ->
         _courses.value = Result.Failure(throwable)
     }
@@ -29,8 +31,13 @@ class HomeViewModel @Inject constructor(
     fun loadCourses(searchQuery: String) {
         cancelJobIfRunning()
         job = viewModelScope.launch(coroutineExceptionHandler) {
-            _courses.value = Result.Loading
-            _courses.value = Result.Success(repository.getCourses(search = searchQuery))
+            _courses.value = Result.Success(
+                repository.getCourses(
+                    page = page,
+                    search = searchQuery,
+                )
+            )
+            page++
         }
     }
 
@@ -40,7 +47,6 @@ class HomeViewModel @Inject constructor(
 
     sealed class Result<out T> {
         data class Success<out T : Any>(val value: T) : Result<T>()
-        data object Loading : Result<Nothing>()
         data class Failure(val throwable: Throwable) : Result<Nothing>()
     }
 }

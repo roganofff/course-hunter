@@ -1,6 +1,7 @@
 package com.trainee.coursehunter.presentation
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.WindowInsets
 import android.widget.Toast
@@ -31,6 +32,7 @@ class MainActivity : AppCompatActivity() {
 
         navView.setupWithNavController(navController)
         Toast.makeText(this, "Main Activity Created!", Toast.LENGTH_LONG).show()
+
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.R) {
             window.insetsController?.hide(WindowInsets.Type.statusBars())
         } else {

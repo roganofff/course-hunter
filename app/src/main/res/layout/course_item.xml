@@ -74,7 +74,6 @@
         android:layout_width="match_parent"
         android:layout_height="114dp"
         android:elevation="-1dp"
-        android:src="@drawable/pedik"
         android:clipToOutline="true"
         android:scaleType="centerCrop"
         app:layout_constraintTop_toTopOf="parent"

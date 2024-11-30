@@ -6,14 +6,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.trainee.core.constants.Constants
 import com.trainee.coursehunter.R
 import com.trainee.coursehunter.databinding.FragmentHomeBinding
 import com.trainee.coursehunter.presentation.home.adapter.CourseRecyclerViewAdapter
 import com.trainee.domain.repository.model.Course
 import com.trainee.domain.repository.model.CourseListItem
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class HomeFragment : Fragment(R.layout.fragment_home) {
 
     private var _binding: FragmentHomeBinding? = null
@@ -21,8 +23,6 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
     private val viewmodel: HomeViewModel by viewModels()
     private lateinit var adapter: CourseRecyclerViewAdapter
-
-    private var loading: Boolean = true
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -35,6 +35,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         binding.recyclerView.adapter = CourseRecyclerViewAdapter()
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
+        adapter = CourseRecyclerViewAdapter()
         adapter.addPlaceholders(6)
 
         setUpObserver()
@@ -48,8 +49,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         viewmodel.courses.observe(viewLifecycleOwner) { result ->
             when (result) {
                 is HomeViewModel.Result.Success -> onLoadingSuccess(result.value, adapter)
-                HomeViewModel.Result.Loading -> loading = true
-                is HomeViewModel.Result.Failure -> onLoadingFailure()
+                is HomeViewModel.Result.Failure -> onLoadingFailure(result.throwable)
             }
         }
     }
@@ -59,8 +59,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         adapter.addToCourseList(listToAdd)
     }
 
-    private fun onLoadingFailure() {
-
+    private fun onLoadingFailure(throwable: Throwable) {
     }
 
     override fun onDestroyView() {
