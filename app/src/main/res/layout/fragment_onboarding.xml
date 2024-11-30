@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_bg"
+    tools:context=".presentation.MainActivity">
+
+    <TextView
+        android:id="@+id/headline"
+        android:layout_width="296dp"
+        android:layout_height="72dp"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="140dp"
+        android:gravity="center"
+        android:text="@string/headline_phrase"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:id="@+id/tagsContainer"
+        android:layout_width="538dp"
+        android:layout_height="316dp"
+        android:layout_marginTop="32dp"
+        app:alignItems="flex_start"
+        app:flexWrap="wrap"
+        app:justifyContent="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/headline">
+
+        <TextView
+            android:layout_width="208dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="4dp"
+            android:gravity="center"
+            android:background="@drawable/round_bg_dark"
+            android:textAppearance="@style/Custom.App.BoldTextAppearance"
+            android:text="@string/admin_1c" />
+        <TextView
+            android:layout_width="111dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="4dp"
+            android:gravity="center"
+            android:background="@drawable/round_bg_green"
+            android:textAppearance="@style/Custom.App.BoldTextAppearance"
+            android:rotation="-15"
+            android:text="@string/rabbitmq" />
+        <TextView
+            android:layout_width="98dp"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:background="@drawable/round_bg_dark"
+            android:textAppearance="@style/Custom.App.BoldTextAppearance"
+            android:text="@string/traffic" />
+        <TextView
+            android:layout_width="162dp"
+            android:layout_height="52dp"
+            android:layout_marginEnd="4dp"
+            android:gravity="center"
+            android:background="@drawable/round_bg_dark"
+            android:textAppearance="@style/Custom.App.BoldTextAppearance"
+            android:text="@string/content_marketing" />
+        <eightbitlab.com.blurview.BlurView
+            android:id="@+id/bvB2BMarketing"
+            android:layout_width="141dp"
+            android:layout_height="52dp"
+            android:layout_marginEnd="4dp"
+            android:background="@drawable/round_bg_glass" >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textAppearance="@style/Custom.App.BoldTextAppearance"
+                android:text="@string/b2b_marketing" />
+        </eightbitlab.com.blurview.BlurView>
+        <eightbitlab.com.blurview.BlurView
+            android:id="@+id/bvGoogleAnalytics"
+            android:layout_width="161dp"
+            android:layout_height="52dp"
+            android:background="@drawable/round_bg_glass" >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textAppearance="@style/Custom.App.BoldTextAppearance"
+                android:text="@string/google_analytics" />
+        </eightbitlab.com.blurview.BlurView>
+        <TextView
+            android:layout_width="171dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="4dp"
+            android:gravity="center"
+            android:background="@drawable/round_bg_dark"
+            android:textAppearance="@style/Custom.App.BoldTextAppearance"
+            android:text="@string/ux_researcher" />
+        <TextView
+            android:layout_width="148dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="4dp"
+            android:gravity="center"
+            android:background="@drawable/round_bg_dark"
+            android:textAppearance="@style/Custom.App.BoldTextAppearance"
+            android:text="@string/web_analytics" />
+        <TextView
+            android:id="@+id/tvBigData"
+            android:layout_width="102dp"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:background="@drawable/round_bg_green"
+            android:textAppearance="@style/Custom.App.BoldTextAppearance"
+            android:rotation="15"
+            android:elevation="-1dp"
+            android:text="@string/big_data" />
+        <TextView
+            android:layout_width="121dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="4dp"
+            android:gravity="center"
+            android:background="@drawable/round_bg_dark"
+            android:textAppearance="@style/Custom.App.BoldTextAppearance"
+            android:text="@string/gamedesign" />
+        <eightbitlab.com.blurview.BlurView
+            android:id="@+id/bvWebDesign"
+            android:layout_width="118dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="4dp"
+            android:background="@drawable/round_bg_glass">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/web_design"
+                android:textAppearance="@style/Custom.App.BoldTextAppearance"
+                android:gravity="center" />
+        </eightbitlab.com.blurview.BlurView>
+
+        <TextView
+            android:layout_width="110dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="4dp"
+            android:gravity="center"
+            android:background="@drawable/round_bg_dark"
+            android:textAppearance="@style/Custom.App.BoldTextAppearance"
+            android:text="@string/cinema_4d" />
+        <TextView
+            android:layout_width="176dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:background="@drawable/round_bg_dark"
+            android:textAppearance="@style/Custom.App.BoldTextAppearance"
+            android:text="@string/prompt_engineering" />
+        <TextView
+            android:layout_width="103dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="4dp"
+            android:gravity="center"
+            android:background="@drawable/round_bg_dark"
+            android:textAppearance="@style/Custom.App.BoldTextAppearance"
+            android:text="@string/webflow" />
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="4dp"
+            android:gravity="center"
+            android:background="@drawable/round_bg_green"
+            android:textAppearance="@style/Custom.App.BoldTextAppearance"
+            android:rotation="-15"
+            android:elevation="-2dp"
+            android:text="@string/three_js" />
+        <TextView
+            android:layout_width="104dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="4dp"
+            android:gravity="center"
+            android:background="@drawable/round_bg_dark"
+            android:textAppearance="@style/Custom.App.BoldTextAppearance"
+            android:text="@string/parsing" />
+        <TextView
+            android:layout_width="175dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:background="@drawable/round_bg_dark"
+            android:textAppearance="@style/Custom.App.BoldTextAppearance"
+            android:text="@string/python_development" />
+    </com.google.android.flexbox.FlexboxLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/continueButton"
+        android:layout_width="328dp"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="56dp"
+        android:background="@drawable/round_bg_green"
+        android:backgroundTint="@color/green"
+        android:text="@string/text_continue"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

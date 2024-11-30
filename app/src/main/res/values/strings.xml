@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">CourseHunter</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="headline_phrase">Тысячи курсов \nв одном месте</string>
+    <string name="title_onboarding">Onboarding</string>
+    <string name="admin_1c">1С Администрирование</string>
+    <string name="rabbitmq">RabbitMQ</string>
+    <string name="traffic">Трафик</string>
+    <string name="content_marketing">Контент маркетинг</string>
+    <string name="b2b_marketing">B2B маркетинг</string>
+    <string name="google_analytics">Google Аналитика</string>
+    <string name="ux_researcher">UX исследователь</string>
+    <string name="web_analytics">Веб-аналитика</string>
+    <string name="big_data">Big Data</string>
+    <string name="gamedesign">Геймдизайн</string>
+    <string name="web_design">Веб-дизайн</string>
+    <string name="cinema_4d">Cinema 4D</string>
+    <string name="prompt_engineering">Промпт инженеринг</string>
+    <string name="webflow">Webflow</string>
+    <string name="three_js">Three.js</string>
+    <string name="parsing">Парсинг</string>
+    <string name="python_development">Python-разработка</string>
+    <string name="text_continue">Продолжить</string>
+    <string name="search_courses">Search courses...</string>
+    <string name="by_add_date">По дате добавления</string>
+    <string name="filter_arrow_down_up">Filter arrow down up</string>
+    <string name="details">Подробнее</string>
+    <string name="none">none</string>
+</resources>
