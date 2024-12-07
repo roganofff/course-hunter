@@ -22,7 +22,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     private val binding: FragmentHomeBinding get() = _binding!!
 
     private val viewmodel: HomeViewModel by viewModels()
-    private lateinit var adapter: CourseRecyclerViewAdapter
+    private var adapter = CourseRecyclerViewAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -32,10 +32,9 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        binding.recyclerView.adapter = CourseRecyclerViewAdapter()
+        binding.recyclerView.adapter = adapter
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
-        adapter = CourseRecyclerViewAdapter()
         adapter.addPlaceholders(6)
 
         setUpObserver()
@@ -56,6 +55,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
     private fun onLoadingSuccess(courseList: List<Course>, adapter: CourseRecyclerViewAdapter) {
         val listToAdd = courseList.map { CourseListItem.Data(it) }
+        adapter.removePlaceholders()
         adapter.addToCourseList(listToAdd)
     }
 

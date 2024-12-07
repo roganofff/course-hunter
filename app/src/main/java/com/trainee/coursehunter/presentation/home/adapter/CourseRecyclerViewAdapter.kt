@@ -1,7 +1,7 @@
 package com.trainee.coursehunter.presentation.home.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -9,7 +9,6 @@ import com.trainee.coursehunter.databinding.CourseItemBinding
 import com.trainee.coursehunter.databinding.PlaceholderCourseItemBinding
 import com.trainee.domain.repository.model.Course
 import com.trainee.domain.repository.model.CourseListItem
-import kotlinx.coroutines.withContext
 
 class CourseRecyclerViewAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
     private val courseList = mutableListOf<CourseListItem>()
@@ -39,6 +38,7 @@ class CourseRecyclerViewAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>(
             is CourseViewHolder -> holder.bind(courseList[position] as CourseListItem.Data)
             is PlaceholderCourseViewHolder -> holder.startShimmer()
         }
+        Log.d("RECYCLER", position.toString())
     }
 
     override fun getItemCount(): Int = courseList.size
@@ -86,6 +86,7 @@ class CourseRecyclerViewAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>(
                 coursePrice.text = course.display_price
                 courseDate.text = course.create_date
                 loadAndSetCover(course)
+                courseCover.clipToOutline = true
             }
         }
 

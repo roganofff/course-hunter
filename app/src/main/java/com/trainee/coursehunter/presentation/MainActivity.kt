@@ -31,7 +31,6 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment)
 
         navView.setupWithNavController(navController)
-        Toast.makeText(this, "Main Activity Created!", Toast.LENGTH_LONG).show()
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.R) {
             window.insetsController?.hide(WindowInsets.Type.statusBars())

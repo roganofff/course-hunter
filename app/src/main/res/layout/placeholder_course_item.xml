@@ -2,8 +2,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/shimmerLayout"
-    android:layout_width="328dp"
-    android:layout_height="236dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp"
     app:shimmer_auto_start="true"
     app:shimmer_base_alpha="0.95"
     app:shimmer_highlight_alpha="1.0"
@@ -11,7 +12,7 @@
     app:shimmer_dropoff="0.5" >
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="328dp"
+        android:layout_width="match_parent"
         android:layout_height="236dp"
         android:background="@drawable/round_bg_course_card">
 
